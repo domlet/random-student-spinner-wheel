@@ -1,16 +1,46 @@
 /*
+Written with much assistance from ChatGPT. Here's the intial prompt I gave:
 write a p5js app that takes a list of  names (any length) and generates a circle with that number of multicolored slices, with each name written inside a slice with the baseline of the text following a line from the center of the circle to the edge. The last letter of each name should be 6px from the circle's outside edge. put a black triangle pointing at the very top of the circle in the center.
 when the user hits any key or clicks on the screen, the circle and names should spin clockwise quickly at first, and then slowly, ultimately stopping with one specific name at the top. there should be a clicking noise that plays every time 5 names pass the black triangle.
 */
 // p5.js spinning name wheel with audio ticks and name alignment
 
-// List of student names
+// List of fictional machine-generated student names:
 let names = [
-  "Aaliyah", "Mateo", "Nia", "Kenji", "Zuri", "Amara", "Malik", "Mei",
-  "Jamal", "Leilani", "Santiago", "Anaya", "Jabari", "Priya", "Zion",
-  "Naomi", "Hassan", "Ayla", "Darius", "Hana", "Luca", "Xiomara", "Kofi",
-  "Esme", "Takumi", "Imani", "Diego", "Rina", "Ayesha", "DeShawn", "Chiara",
-  "Yusuf", "Noemi", "Kai"
+  "Aaliyah",
+  "Mateo",
+  "Nia",
+  "Kenji",
+  "Zuri",
+  "Amara",
+  "Malik",
+  "Mei",
+  "Jamal",
+  "Leilani",
+  "Santiago",
+  "Anaya",
+  "Jabari",
+  "Priya",
+  "Zion",
+  "Naomi",
+  "Hassan",
+  "Ayla",
+  "Darius",
+  "Hana",
+  "Luca",
+  "Xiomara",
+  "Kofi",
+  "Esme",
+  "Takumi",
+  "Imani",
+  "Diego",
+  "Rina",
+  "Ayesha",
+  "DeShawn",
+  "Chiara",
+  "Yusuf",
+  "Noemi",
+  "Kai",
 ];
 
 let sliceColors = [];
@@ -34,11 +64,11 @@ let showInterface = false;
 let approvedWinners = {}; // Tracks which names got the party emoji
 
 function preload() {
-  soundFormats('mp3', 'ogg');
-  clickSound = loadSound('https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg');
-  chimeSound = loadSound('https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg');
-  correctSound = loadSound('325805__wagna__collect.wav');
-  incorrectSound = loadSound('587253__beetlemuse__dats-wrong.wav');
+  soundFormats("mp3", "ogg");
+  clickSound = loadSound("sounds/wood_plank_flicks.ogg");
+  chimeSound = loadSound("sounds/clang_and_wobble.ogg");
+  correctSound = loadSound("sounds/325805__wagna__collect.wav");
+  incorrectSound = loadSound("sounds/587253__beetlemuse__dats-wrong.wav");
 }
 
 function setup() {
@@ -60,7 +90,7 @@ function draw() {
   fill(255);
   textSize(14);
   textAlign(CENTER, BOTTOM);
-  text("Click to spin wheel", width / 2, height - 20);
+  text("Click to spin wheel. 1️⃣ Correct 0️⃣ Incorrect", width / 2, height - 20);
   textAlign(LEFT, TOP);
   textSize(16);
   textStyle(BOLD);
@@ -87,7 +117,9 @@ function draw() {
     velocity = lerp(0.5, 0, t);
     angle += velocity;
 
-    let currentIndex = floor((TWO_PI - angle % TWO_PI) / (TWO_PI / names.length)) % names.length;
+    let currentIndex =
+      floor((TWO_PI - (angle % TWO_PI)) / (TWO_PI / names.length)) %
+      names.length;
     if (abs(currentIndex - lastClickIndex) >= 5) {
       if (clickSound && clickSound.isLoaded()) clickSound.play();
       lastClickIndex = currentIndex;
@@ -110,18 +142,22 @@ function draw() {
   }
 
   if (!spinning && selectedName !== "") {
-    fill(0);
     textAlign(CENTER, CENTER);
     textSize(32);
-    text("🎉 " + selectedName + " 🎉", 0, 0);
-    textSize(12);
-    textAlign(CENTER, BOTTOM);
+    let displayText = "🎉 " + selectedName + " 🎉";
+    let padding = 20;
+    let textW = textWidth(displayText);
+    let textH = 40;
 
-    if (showInterface) {
-      textAlign(CENTER, CENTER);
-      textSize(24);
-      text("❌     ✅", 0, -height / 2 + 40);
-    }
+    // Draw background rectangle
+    fill(255);
+    noStroke();
+    rectMode(CENTER);
+    rect(0, 0, textW + padding, textH + padding / 2, 20);
+
+    // Draw name on top
+    fill(0);
+    text(displayText, 0, 0);
   }
 }
 
@@ -131,9 +167,17 @@ function drawWheel() {
   for (let i = 0; i < names.length; i++) {
     let startAngle = i * anglePerSlice;
     fill(sliceColors[i % sliceColors.length]);
-    stroke('gray');
+    stroke("gray");
     strokeWeight(1);
-    arc(0, 0, wheelRadius * 2, wheelRadius * 2, startAngle, startAngle + anglePerSlice, PIE);
+    arc(
+      0,
+      0,
+      wheelRadius * 2,
+      wheelRadius * 2,
+      startAngle,
+      startAngle + anglePerSlice,
+      PIE
+    );
     push();
     rotate(startAngle + anglePerSlice / 2);
     fill(0);
@@ -155,15 +199,15 @@ function drawPointer() {
 }
 
 function keyPressed() {
-  if (key === ' ') triggerSpin();
+  if (key === " ") triggerSpin();
   if (!spinning && showInterface) {
-    if (key === '1') {
+    if (key === "1") {
       approvedWinners[selectedName] = true;
       showInterface = false;
-      correctSound.play()
-    } else if (key === '0') {
+      correctSound.play();
+    } else if (key === "0") {
       showInterface = false;
-      incorrectSound.play()
+      incorrectSound.play();
     }
   }
 }
@@ -199,7 +243,9 @@ function triggerSpin() {
     spinStartTime = millis();
     spinDuration = 4000 + random(0, 1000);
     velocity = 0.5;
-    lastClickIndex = floor((TWO_PI - angle % TWO_PI) / (TWO_PI / names.length)) % names.length;
+    lastClickIndex =
+      floor((TWO_PI - (angle % TWO_PI)) / (TWO_PI / names.length)) %
+      names.length;
     selectedName = "";
   }
 }
