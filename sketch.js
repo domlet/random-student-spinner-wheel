@@ -192,9 +192,9 @@ function drawPointer() {
   fill(0);
   noStroke();
   push();
-  translate(wheelRadius + 30, 0);
+  translate(wheelRadius - 10, 0);
   rotate(HALF_PI);
-  triangle(-10, -20, 10, -20, 0, 0);
+  triangle(-20, -40, 20, -40, 0, 0);
   pop();
 }
 
