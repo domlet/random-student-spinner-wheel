@@ -1,12 +1,13 @@
 /*
 Random Student (Spinner Wheel) © 1999 by Dom Brassey (@domlet) is licensed under CC BY-NC 4.0
+Instructions here: https://github.com/domlet/spinner/?tab=readme-ov-file#random-student-spinner-wheel
 Original creators like [schellenberg](https://editor.p5js.org/schellenberg/sketches/_Ers-90T_) and [Q](https://editor.p5js.org/Q/sketches/07UvXkBLV) published 'spinning wheel' sketches on p5js, which ChatGPT likely ingested to understand my original prompt:
 write a p5js app that takes a list of  names (any length) and generates a circle with that number of multicolored slices, with each name written inside a slice with the baseline of the text following a line from the center of the circle to the edge. The last letter of each name should be 6px from the circle's outside edge. put a black triangle pointing at the very top of the circle in the center.
 when the user hits any key or clicks on the screen, the circle and names should spin clockwise quickly at first, and then slowly, ultimately stopping with one specific name at the top. there should be a clicking noise that plays every time 5 names pass the black triangle.
 */
 // p5.js spinning name wheel with audio ticks and name alignment
 
-// List of fictional machine-generated student names:
+// Define student groups and students using lists full of strings:
 const period1 = ["Aaliyah", "Mateo", "Nia", "Kenji", "Zuri", "Amara"];
 const period2 = [
   "Aaliyah",
@@ -44,11 +45,11 @@ const period2 = [
   "Noemi",
   "Kai",
 ];
-let names = period1;
-
-let sliceColors = [];
+// Which group do you want to use?
+let names = period2;
 
 // Wheel settings and animation state
+let sliceColors = [];
 let wheelRadius = 200;
 let angle = 0;
 let velocity = 0;
