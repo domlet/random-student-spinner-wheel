@@ -1,12 +1,14 @@
 /*
-Written with much assistance from ChatGPT. Here's the intial prompt I gave:
+Random Student (Spinner Wheel) © 1999 by Dom Brassey (@domlet) is licensed under CC BY-NC 4.0
+Original creators like [schellenberg](https://editor.p5js.org/schellenberg/sketches/_Ers-90T_) and [Q](https://editor.p5js.org/Q/sketches/07UvXkBLV) published 'spinning wheel' sketches on p5js, which ChatGPT likely ingested to understand my original prompt:
 write a p5js app that takes a list of  names (any length) and generates a circle with that number of multicolored slices, with each name written inside a slice with the baseline of the text following a line from the center of the circle to the edge. The last letter of each name should be 6px from the circle's outside edge. put a black triangle pointing at the very top of the circle in the center.
 when the user hits any key or clicks on the screen, the circle and names should spin clockwise quickly at first, and then slowly, ultimately stopping with one specific name at the top. there should be a clicking noise that plays every time 5 names pass the black triangle.
 */
 // p5.js spinning name wheel with audio ticks and name alignment
 
 // List of fictional machine-generated student names:
-let names = [
+const period1 = ["Aaliyah", "Mateo", "Nia", "Kenji", "Zuri", "Amara"];
+const period2 = [
   "Aaliyah",
   "Mateo",
   "Nia",
@@ -42,6 +44,7 @@ let names = [
   "Noemi",
   "Kai",
 ];
+let names = period1;
 
 let sliceColors = [];
 
@@ -72,7 +75,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 500);
+  createCanvas(600, 450);
   textAlign(RIGHT, CENTER);
   textSize(14);
   angleMode(RADIANS);
@@ -90,7 +93,7 @@ function draw() {
   fill(255);
   textSize(14);
   textAlign(CENTER, BOTTOM);
-  text("Click to spin wheel. 1️⃣ Correct 0️⃣ Incorrect", width / 2, height - 20);
+  text("Click to spin wheel. 1️⃣ Correct 0️⃣ Incorrect", width / 2, height);
   textAlign(LEFT, TOP);
   textSize(16);
   textStyle(BOLD);
