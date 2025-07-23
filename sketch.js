@@ -12,7 +12,19 @@ when the user hits any key or clicks on the screen, the circle and names should 
 */
 
 // Define student groups and students using lists full of strings:
-const period1 = ["Tom", "Dick", "Harry", "Kenji", "Zuri", "Amara"];
+const period1 = [
+  "Tom",
+  "Dick",
+  "Harry",
+  "Kenji",
+  "Zuri",
+  "Amara",
+  "Aarav",
+  "Mei",
+  "Ravi",
+  "Anika",
+  "Haruto",
+];
 const period2 = [
   "Aaliyah",
   "Mateo",
