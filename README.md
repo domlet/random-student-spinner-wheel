@@ -45,7 +45,7 @@ Anyone can use this tool. It costs nothing to download, copy, publish or modify.
 
 1. **The easiest way** is to replace the names in [this p5js sketch](https://editor.p5js.org/domlet/sketches/G3FnfFgth) and run the tool in your web browser. But that is not best practice for keeping student information (like first and last names) private. Compromising our students' privacy can risk the safety of children and families with citizenship or other insecurities in a surveillance state. (So please don't.)
 
-1. **The safest way** is to follow these steps ([watch this video]())...
+1. **The safest way** is to follow these steps ([watch this video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey))...
 
    1. [Download the project from p5js](https://editor.p5js.org/domlet/sketches/G3FnfFgth) or [the GitHub repo](https://github.com/domlet/spinner) and save it your computer. You can run the app locally, even without an Internet connection.
 
@@ -79,7 +79,7 @@ Anyone can use this tool. It costs nothing to download, copy, publish or modify.
       npx http-server
       ```
 
-   1. **Need help?** Here's a [short video]() demonstrating how to follow the steps above.
+   1. **Need help?** Here's a [short video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey) demonstrating how to follow the steps above.
 
 1. It goes without saying that anyone can [copy the p5js project](https://editor.p5js.org/domlet/sketches/G3FnfFgth) or [fork]() this repo and modify your own versions for all to see. :)
 
