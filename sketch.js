@@ -12,19 +12,7 @@ when the user hits any key or clicks on the screen, the circle and names should 
 */
 
 // Define student groups and students using lists full of strings:
-const period1 = [
-  "Tom",
-  "Dick",
-  "Harry",
-  "Kenji",
-  "Zuri",
-  "Amara",
-  "Aarav",
-  "Mei",
-  "Ravi",
-  "Anika",
-  "Haruto",
-];
+const period1 = ["Tom", "Dick", "Harry", "Mei", "Ravi", "Anika", "Haruto"];
 const period2 = [
   "Aaliyah",
   "Mateo",
@@ -73,6 +61,7 @@ let spinning = false;
 let spinStartTime = 0;
 let spinDuration = 0;
 let lastClickIndex = 0;
+let lastClickTime = 0; // For fallback click timing
 
 // Sounds and selected name
 let clickSound;
@@ -140,8 +129,21 @@ function draw() {
     let currentIndex =
       floor((TWO_PI - (angle % TWO_PI)) / (TWO_PI / names.length)) %
       names.length;
+    let now = millis();
+    // play the clicking sound if there are at least 5 slices
     if (abs(currentIndex - lastClickIndex) >= 5) {
-      if (clickSound && clickSound.isLoaded()) clickSound.play();
+      if (clickSound && clickSound.isLoaded()) {
+        clickSound.play();
+        lastClickTime = now;
+      }
+      lastClickIndex = currentIndex;
+      // still play a sound if there are 2 slices!
+    } else if (currentIndex !== lastClickIndex && now - lastClickTime > 250) {
+      // Fallback: play click every 250ms if not recently played
+      if (clickSound && clickSound.isLoaded()) {
+        clickSound.play();
+        lastClickTime = now;
+      }
       lastClickIndex = currentIndex;
     }
 

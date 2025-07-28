@@ -1,0 +1,64 @@
+Okay, let me show you the best way to
+get this spinner working for you on your
+computer with your students. So, here's
+how the spinner works. Basically, you
+click it and it spins and then you'll
+have to press one or zero for a correct
+answer or an incorrect answer before you
+can spin it again. So, what do the
+instructions say? It says the safest way
+is to first download the project from
+this source or this source. And if
+you're on the uh GitHub repo, the way
+that you download the uh file is a click
+code and then click download zip. You're
+going to have to unzip that zip file. So
+let's see. I've already done that right
+here. So if I just open this, I can see
+all the files inside. And then I'm going
+to open the whole folder. That's
+important. And open it up in Visual
+Studio Code. That's my preferred
+environment to make edits. So you can
+see here that I can open sketchjs
+and I can say oh I don't have period 1
+and two I have period 3 and period 4 and
+you can see this is a small list and
+this is a really long list and those
+instructions are right here. So you can
+edit your list of students and if a
+student is absent like this I can say oh
+Leilani is not here today you can hide
+them from um the spinner. So next it
+says uh you got to find this line let
+names because whatever names is holding
+whatever data is in the variable names
+that's what is going to show up on the
+spinner. So, let's say I want to use my
+period 3 here. Now, because I have the
+live server extension, I have this
+button down here that says go live. So,
+if you have this installed, you can
+click this button and say, "Hey, I want
+to see my spinner. Start a local server
+on my computer." And you can see right
+here, it's looking at my period 3 list
+and I pick spinner and choose a name. So
+then there's really nothing else that
+you have to do. If you don't want to use
+Visual Studio Code and Live Server,
+these are some other options, Python and
+Node, if you're familiar with those. I
+think Live Server is the easiest. But
+basically, save your changes and that's
+how it works. It's safe because it's not
+on the internet. You're not publishing
+your students names. And um you can keep
+it wherever you want on your computer
+where it's easy to find. I hope you
+enjoy it. Let me know what you think.
+
+From this video: 
+https://www.youtube.com/watch?v=TTn8ZC9z4yg
+
+Random Student (Spinner Wheel) © 2025 by Dom Brassey (@domlet) is licensed under CC BY-NC 4.0 

@@ -45,7 +45,7 @@ Anyone can use this tool. It costs nothing to download, copy, publish or modify.
 
 1. **The easiest way** is to replace the names in [this p5js sketch](https://editor.p5js.org/domlet/sketches/G3FnfFgth) and run the tool in your web browser. But that is not best practice for keeping student information (like first and last names) private. Compromising our students' privacy can risk the safety of children and families with citizenship or other insecurities in a surveillance state. (So please don't.)
 
-1. **The safest way** is to follow these steps ([watch this video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey))...
+1. **The safest way** is to follow these steps ([watch this video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey&cc_load_policy=1&cc_lang_pref=en))...
 
    1. [Download the project from p5js](https://editor.p5js.org/domlet/sketches/G3FnfFgth) or [the GitHub repo](https://github.com/domlet/spinner) and save it your computer. You can run the app locally, even without an Internet connection.
 
@@ -79,9 +79,11 @@ Anyone can use this tool. It costs nothing to download, copy, publish or modify.
       npx http-server
       ```
 
-   1. **Need help?** Here's a [short video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey) demonstrating how to follow the steps above.
+## Video tutorial
 
-1. It goes without saying that anyone can [copy the p5js project](https://editor.p5js.org/domlet/sketches/G3FnfFgth) or [fork]() this repo and modify your own versions for all to see. :)
+[Watch a 2-minute video](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey&cc_load_policy=1&cc_lang_pref=en) that shows how to follow the steps outlined above. Here's the [video transcript](transcript.txt).
+
+[![video thumbnail](images/video-th.jpg)](https://www.youtube.com/watch?v=TTn8ZC9z4yg&ab_channel=dombrassey)
 
 ## Further development
 
@@ -90,8 +92,8 @@ _Thinking about adding..._
 1. Battle mode: Ability to **recognize teams within the group** (such as `Team 1` vs `Team 2`).
 1. Enhanced scoring: Ability to **track students' points over the term** – probably with a simple SQL database.
 
-However, the app without these features hits the sweet spot of being dead simple and easy to use or make simple changes to. So I may change nothing!
+However, the app is dead simple and that's part of its value. I will probably change nothing – but that shouldn't stop YOU from hacking on it! :)
 
 ## Questions or comments?
 
-I would love to know In invite you to add an issue for [this repository](https://github.com/domlet/spinner) or email me at dom.brassey@ousd.org. Buy me a coffee here or learn more about me [on my blog](https://domlet.github.io/about). 👍🏼
+Comment box on [this blog post](https://domlet.github.io/posts/random-student-spinner/).
